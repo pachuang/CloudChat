@@ -1,0 +1,644 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{CB6579A5-F435-4088-B69E-411B4708DC2B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CloudChat</RootNamespace>
+    <AssemblyName>CloudChat</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Data.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Office.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v13.2.Core, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v13.2.Extensions, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v13.2, Version=13.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="IMLibrary">
+      <HintPath>Public\IMLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity\FileClass.cs" />
+    <Compile Include="Entity\FriendEntity.cs" />
+    <Compile Include="Entity\MessageEntity.cs" />
+    <Compile Include="Controls\FileTransferControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\FileTransferControl.Designer.cs">
+      <DependentUpon>FileTransferControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Public\HandleMethod.cs" />
+    <Compile Include="Public\TCPTransferFile.cs" />
+    <Compile Include="Public\VedioMethod.cs" />
+    <Compile Include="UI\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MainUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\MainUI.Designer.cs">
+      <DependentUpon>MainUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Public\AccessMethod.cs" />
+    <Compile Include="UI\TalkWinFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\TalkWinFrm.Designer.cs">
+      <DependentUpon>TalkWinFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserInformationSetFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UserInformationSetFrm.Designer.cs">
+      <DependentUpon>UserInformationSetFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\VedioTalkFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\VedioTalkFrm.Designer.cs">
+      <DependentUpon>VedioTalkFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\VideoApplyFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\VideoApplyFrm.Designer.cs">
+      <DependentUpon>VideoApplyFrm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Controls\FileTransferControl.resx">
+      <DependentUpon>FileTransferControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\MainUI.resx">
+      <DependentUpon>MainUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="UI\TalkWinFrm.resx">
+      <DependentUpon>TalkWinFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserInformationSetFrm.resx">
+      <DependentUpon>UserInformationSetFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\VedioTalkFrm.resx">
+      <DependentUpon>VedioTalkFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\VideoApplyFrm.resx">
+      <DependentUpon>VideoApplyFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="HeadPicture\face.ini" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="AppData\MainEntityData.xml" />
+    <Content Include="HeadPicture\1-1.bmp" />
+    <Content Include="HeadPicture\1.bmp" />
+    <Content Include="HeadPicture\10-1.bmp" />
+    <Content Include="HeadPicture\10.bmp" />
+    <Content Include="HeadPicture\100-1.bmp" />
+    <Content Include="HeadPicture\100.bmp" />
+    <Content Include="HeadPicture\101.bmp" />
+    <Content Include="HeadPicture\11-1.bmp" />
+    <Content Include="HeadPicture\11.bmp" />
+    <Content Include="HeadPicture\12-1.bmp" />
+    <Content Include="HeadPicture\12.bmp" />
+    <Content Include="HeadPicture\13-1.bmp" />
+    <Content Include="HeadPicture\13.bmp" />
+    <Content Include="HeadPicture\14-1.bmp" />
+    <Content Include="HeadPicture\14.bmp" />
+    <Content Include="HeadPicture\15-1.bmp" />
+    <Content Include="HeadPicture\15.bmp" />
+    <Content Include="HeadPicture\16-1.bmp" />
+    <Content Include="HeadPicture\16.bmp" />
+    <Content Include="HeadPicture\17-1.bmp" />
+    <Content Include="HeadPicture\17.bmp" />
+    <Content Include="HeadPicture\18-1.bmp" />
+    <Content Include="HeadPicture\18.bmp" />
+    <Content Include="HeadPicture\19-1.bmp" />
+    <Content Include="HeadPicture\19.bmp" />
+    <Content Include="HeadPicture\2-1.bmp" />
+    <Content Include="HeadPicture\2.bmp" />
+    <Content Include="HeadPicture\20-1.bmp" />
+    <Content Include="HeadPicture\20.bmp" />
+    <Content Include="HeadPicture\21-1.bmp" />
+    <Content Include="HeadPicture\21.bmp" />
+    <Content Include="HeadPicture\22-1.bmp" />
+    <Content Include="HeadPicture\22.bmp" />
+    <Content Include="HeadPicture\23-1.bmp" />
+    <Content Include="HeadPicture\23.bmp" />
+    <Content Include="HeadPicture\24-1.bmp" />
+    <Content Include="HeadPicture\24.bmp" />
+    <Content Include="HeadPicture\25-1.bmp" />
+    <Content Include="HeadPicture\25.bmp" />
+    <Content Include="HeadPicture\26-1.bmp" />
+    <Content Include="HeadPicture\26.bmp" />
+    <Content Include="HeadPicture\27-1.bmp" />
+    <Content Include="HeadPicture\27.bmp" />
+    <Content Include="HeadPicture\28-1.bmp" />
+    <Content Include="HeadPicture\28.bmp" />
+    <Content Include="HeadPicture\29-1.bmp" />
+    <Content Include="HeadPicture\29.bmp" />
+    <Content Include="HeadPicture\3-1.bmp" />
+    <Content Include="HeadPicture\3.bmp" />
+    <Content Include="HeadPicture\30-1.bmp" />
+    <Content Include="HeadPicture\30.bmp" />
+    <Content Include="HeadPicture\31-1.bmp" />
+    <Content Include="HeadPicture\31.bmp" />
+    <Content Include="HeadPicture\32-1.bmp" />
+    <Content Include="HeadPicture\32.bmp" />
+    <Content Include="HeadPicture\33-1.bmp" />
+    <Content Include="HeadPicture\33.bmp" />
+    <Content Include="HeadPicture\34-1.bmp" />
+    <Content Include="HeadPicture\34.bmp" />
+    <Content Include="HeadPicture\35-1.bmp" />
+    <Content Include="HeadPicture\35.bmp" />
+    <Content Include="HeadPicture\36-1.bmp" />
+    <Content Include="HeadPicture\36.bmp" />
+    <Content Include="HeadPicture\37-1.bmp" />
+    <Content Include="HeadPicture\37.bmp" />
+    <Content Include="HeadPicture\38-1.bmp" />
+    <Content Include="HeadPicture\38.bmp" />
+    <Content Include="HeadPicture\39-1.bmp" />
+    <Content Include="HeadPicture\39.bmp" />
+    <Content Include="HeadPicture\4-1.bmp" />
+    <Content Include="HeadPicture\4.bmp" />
+    <Content Include="HeadPicture\40-1.bmp" />
+    <Content Include="HeadPicture\40.bmp" />
+    <Content Include="HeadPicture\41-1.bmp" />
+    <Content Include="HeadPicture\41.bmp" />
+    <Content Include="HeadPicture\42-1.bmp" />
+    <Content Include="HeadPicture\42.bmp" />
+    <Content Include="HeadPicture\43-1.bmp" />
+    <Content Include="HeadPicture\43.bmp" />
+    <Content Include="HeadPicture\44-1.bmp" />
+    <Content Include="HeadPicture\44.bmp" />
+    <Content Include="HeadPicture\45-1.bmp" />
+    <Content Include="HeadPicture\45.bmp" />
+    <Content Include="HeadPicture\46-1.bmp" />
+    <Content Include="HeadPicture\46.bmp" />
+    <Content Include="HeadPicture\47-1.bmp" />
+    <Content Include="HeadPicture\47.bmp" />
+    <Content Include="HeadPicture\48-1.bmp" />
+    <Content Include="HeadPicture\48.bmp" />
+    <Content Include="HeadPicture\49-1.bmp" />
+    <Content Include="HeadPicture\49.bmp" />
+    <Content Include="HeadPicture\5-1.bmp" />
+    <Content Include="HeadPicture\5.bmp" />
+    <Content Include="HeadPicture\50-1.bmp" />
+    <Content Include="HeadPicture\50.bmp" />
+    <Content Include="HeadPicture\51-1.bmp" />
+    <Content Include="HeadPicture\51.bmp" />
+    <Content Include="HeadPicture\52-1.bmp" />
+    <Content Include="HeadPicture\52.bmp" />
+    <Content Include="HeadPicture\53-1.bmp" />
+    <Content Include="HeadPicture\53.bmp" />
+    <Content Include="HeadPicture\54-1.bmp" />
+    <Content Include="HeadPicture\54.bmp" />
+    <Content Include="HeadPicture\55-1.bmp" />
+    <Content Include="HeadPicture\55.bmp" />
+    <Content Include="HeadPicture\56-1.bmp" />
+    <Content Include="HeadPicture\56.bmp" />
+    <Content Include="HeadPicture\57-1.bmp" />
+    <Content Include="HeadPicture\57.bmp" />
+    <Content Include="HeadPicture\58-1.bmp" />
+    <Content Include="HeadPicture\58.bmp" />
+    <Content Include="HeadPicture\59-1.bmp" />
+    <Content Include="HeadPicture\59.bmp" />
+    <Content Include="HeadPicture\6-1.bmp" />
+    <Content Include="HeadPicture\6.bmp" />
+    <Content Include="HeadPicture\60-1.bmp" />
+    <Content Include="HeadPicture\60.bmp" />
+    <Content Include="HeadPicture\61-1.bmp" />
+    <Content Include="HeadPicture\61.bmp" />
+    <Content Include="HeadPicture\62-1.bmp" />
+    <Content Include="HeadPicture\62.bmp" />
+    <Content Include="HeadPicture\63-1.bmp" />
+    <Content Include="HeadPicture\63.bmp" />
+    <Content Include="HeadPicture\64-1.bmp" />
+    <Content Include="HeadPicture\64.bmp" />
+    <Content Include="HeadPicture\65-1.bmp" />
+    <Content Include="HeadPicture\65.bmp" />
+    <Content Include="HeadPicture\66-1.bmp" />
+    <Content Include="HeadPicture\66.bmp" />
+    <Content Include="HeadPicture\67-1.bmp" />
+    <Content Include="HeadPicture\67.bmp" />
+    <Content Include="HeadPicture\68-1.bmp" />
+    <Content Include="HeadPicture\68.bmp" />
+    <Content Include="HeadPicture\69-1.bmp" />
+    <Content Include="HeadPicture\69.bmp" />
+    <Content Include="HeadPicture\7-1.bmp" />
+    <Content Include="HeadPicture\7.bmp" />
+    <Content Include="HeadPicture\70-1.bmp" />
+    <Content Include="HeadPicture\70.bmp" />
+    <Content Include="HeadPicture\71-1.bmp" />
+    <Content Include="HeadPicture\71.bmp" />
+    <Content Include="HeadPicture\72-1.bmp" />
+    <Content Include="HeadPicture\72.bmp" />
+    <Content Include="HeadPicture\73-1.bmp" />
+    <Content Include="HeadPicture\73.bmp" />
+    <Content Include="HeadPicture\74-1.bmp" />
+    <Content Include="HeadPicture\74.bmp" />
+    <Content Include="HeadPicture\75-1.bmp" />
+    <Content Include="HeadPicture\75.bmp" />
+    <Content Include="HeadPicture\76-1.bmp" />
+    <Content Include="HeadPicture\76.bmp" />
+    <Content Include="HeadPicture\77-1.bmp" />
+    <Content Include="HeadPicture\77.bmp" />
+    <Content Include="HeadPicture\78-1.bmp" />
+    <Content Include="HeadPicture\78.bmp" />
+    <Content Include="HeadPicture\79-1.bmp" />
+    <Content Include="HeadPicture\79.bmp" />
+    <Content Include="HeadPicture\8-1.bmp" />
+    <Content Include="HeadPicture\8.bmp" />
+    <Content Include="HeadPicture\80-1.bmp" />
+    <Content Include="HeadPicture\80.bmp" />
+    <Content Include="HeadPicture\81-1.bmp" />
+    <Content Include="HeadPicture\81.bmp" />
+    <Content Include="HeadPicture\82-1.bmp" />
+    <Content Include="HeadPicture\82.bmp" />
+    <Content Include="HeadPicture\83-1.bmp" />
+    <Content Include="HeadPicture\83.bmp" />
+    <Content Include="HeadPicture\84-1.bmp" />
+    <Content Include="HeadPicture\84.bmp" />
+    <Content Include="HeadPicture\85-1.bmp" />
+    <Content Include="HeadPicture\85.bmp" />
+    <Content Include="HeadPicture\86-1.bmp" />
+    <Content Include="HeadPicture\86.bmp" />
+    <Content Include="HeadPicture\87-1.bmp" />
+    <Content Include="HeadPicture\87.bmp" />
+    <Content Include="HeadPicture\88-1.bmp" />
+    <Content Include="HeadPicture\88.bmp" />
+    <Content Include="HeadPicture\89-1.bmp" />
+    <Content Include="HeadPicture\89.bmp" />
+    <Content Include="HeadPicture\9-1.bmp" />
+    <Content Include="HeadPicture\9.bmp" />
+    <Content Include="HeadPicture\90-1.bmp" />
+    <Content Include="HeadPicture\90.bmp" />
+    <Content Include="HeadPicture\91-1.bmp" />
+    <Content Include="HeadPicture\91.bmp" />
+    <Content Include="HeadPicture\92-1.bmp" />
+    <Content Include="HeadPicture\92.bmp" />
+    <Content Include="HeadPicture\93-1.bmp" />
+    <Content Include="HeadPicture\93.bmp" />
+    <Content Include="HeadPicture\94-1.bmp" />
+    <Content Include="HeadPicture\94.bmp" />
+    <Content Include="HeadPicture\95-1.bmp" />
+    <Content Include="HeadPicture\95.bmp" />
+    <Content Include="HeadPicture\96-1.bmp" />
+    <Content Include="HeadPicture\96.bmp" />
+    <Content Include="HeadPicture\97-1.bmp" />
+    <Content Include="HeadPicture\97.bmp" />
+    <Content Include="HeadPicture\98-1.bmp" />
+    <Content Include="HeadPicture\98.bmp" />
+    <Content Include="HeadPicture\99-1.bmp" />
+    <Content Include="HeadPicture\99.bmp" />
+    <Content Include="HeadPicture\back.bmp" />
+    <Content Include="HeadPicture\bitbug_favicon.ico" />
+    <Content Include="HeadPicture\Chat1.bmp" />
+    <Content Include="HeadPicture\Chat2.bmp" />
+    <Content Include="HeadPicture\Framhead.bmp" />
+    <Content Include="Resources\20120818113914742_easyicon_cn_16.png" />
+    <Content Include="Resources\20120818113914742_easyicon_cn_161.png" />
+    <Content Include="Resources\20120824033434910_easyicon_cn_24.png" />
+    <Content Include="Resources\20120910030548870_easyicon_cn_24.png" />
+    <Content Include="Resources\20120910031018598_easyicon_cn_24.png" />
+    <Content Include="Resources\4.png" />
+    <Content Include="Resources\AddBtn_down.png" />
+    <Content Include="Resources\afternoon.jpg" />
+    <Content Include="Resources\aio_head_normal.png" />
+    <Content Include="Resources\aio_quickbar_cut.png" />
+    <Content Include="Resources\aio_quickbar_face.png" />
+    <Content Include="Resources\aio_quickbar_flirtationface.png" />
+    <Content Include="Resources\aio_quickbar_font.png" />
+    <Content Include="Resources\aio_quickbar_inputassist.png" />
+    <Content Include="Resources\aio_quickbar_more.png" />
+    <Content Include="Resources\aio_quickbar_register.png" />
+    <Content Include="Resources\aio_quickbar_richface.png" />
+    <Content Include="Resources\aio_quickbar_screen1.png" />
+    <Content Include="Resources\aio_quickbar_screen2.png" />
+    <Content Include="Resources\aio_quickbar_sendpic.png" />
+    <Content Include="Resources\aio_quickbar_twitter.png" />
+    <Content Include="Resources\AIO_SetBtn_down.png" />
+    <Content Include="Resources\AIO_SetBtn_highlight.png" />
+    <Content Include="Resources\AIO_SetBtn_highlight_normal.png" />
+    <Content Include="Resources\AIO_SetBtn_normal.png" />
+    <Content Include="Resources\allbtn_down.png" />
+    <Content Include="Resources\allbtn_highlight.png" />
+    <Content Include="Resources\all_inside_bkg.png" />
+    <Content Include="Resources\AM_MenuICON.png" />
+    <Content Include="Resources\app_icon_16.png" />
+    <Content Include="Resources\app_icon_161.png" />
+    <Content Include="Resources\app_icon_40.png" />
+    <Content Include="Resources\app_icon_401.png" />
+    <Content Include="Resources\AV_Accept.png" />
+    <Content Include="Resources\AV_Accept1.png" />
+    <Content Include="Resources\AV_New_Mic_Style3.png" />
+    <Content Include="Resources\AV_Refuse.png" />
+    <Content Include="Resources\AV_VDC_Bkg.png" />
+    <Content Include="Resources\away %282%29.png" />
+    <Content Include="Resources\b9m0_0.png" />
+    <Content Include="Resources\back.PNG" />
+    <Content Include="Resources\back2.PNG" />
+    <Content Include="Resources\BackPalace.png" />
+    <Content Include="Resources\BCF_Title32.ico" />
+    <Content Include="Resources\bell.png" />
+    <Content Include="Resources\Boot.png" />
+    <Content Include="Resources\Boot1.png" />
+    <Content Include="Resources\btn_close_disable.png" />
+    <Content Include="Resources\btn_close_down.png" />
+    <Content Include="Resources\btn_close_highlight.png" />
+    <Content Include="Resources\btn_max_down.png" />
+    <Content Include="Resources\btn_max_highlight.png" />
+    <Content Include="Resources\btn_max_normal.png" />
+    <Content Include="Resources\btn_mini_down.png" />
+    <Content Include="Resources\btn_mini_highlight.png" />
+    <Content Include="Resources\btn_mini_normal.png" />
+    <Content Include="Resources\btn_restore_down.png" />
+    <Content Include="Resources\btn_restore_highlight.png" />
+    <Content Include="Resources\btn_restore_normal.png" />
+    <Content Include="Resources\btn_set_hover.png" />
+    <Content Include="Resources\btn_set_normal.png" />
+    <Content Include="Resources\btn_set_press.png" />
+    <Content Include="Resources\btn_Skin_down.png" />
+    <Content Include="Resources\btn_Skin_highlight.png" />
+    <Content Include="Resources\btn_Skin_normal.png" />
+    <Content Include="Resources\busy %282%29.png" />
+    <Content Include="Resources\busy.gif" />
+    <Content Include="Resources\busy1.gif" />
+    <Content Include="Resources\busy2.gif" />
+    <Content Include="Resources\button_login_down.png" />
+    <Content Include="Resources\button_login_hover.png" />
+    <Content Include="Resources\button_login_normal.png" />
+    <Content Include="Resources\camera1.png" />
+    <Content Include="Resources\camera2.png" />
+    <Content Include="Resources\cameraDis.png" />
+    <Content Include="Resources\checkbox_hightlight.png" />
+    <Content Include="Resources\checkbox_normal.png" />
+    <Content Include="Resources\checkbox_pushed.png" />
+    <Content Include="Resources\checkbox_tick_highlight.png" />
+    <Content Include="Resources\checkbox_tick_normal.png" />
+    <Content Include="Resources\checkbox_tick_pushed.png" />
+    <Content Include="Resources\ColumnMerged.bmp" />
+    <Content Include="Resources\ContactTipsVASFlagExt_Camera.png" />
+    <Content Include="Resources\Conversation.png" />
+    <Content Include="Resources\copy.png" />
+    <Content Include="Resources\copy1.png" />
+    <Content Include="Resources\corner_back.png" />
+    <Content Include="Resources\corner_back_hover.png" />
+    <Content Include="Resources\corner_back_press.png" />
+    <Content Include="Resources\corner_left.png" />
+    <Content Include="Resources\corner_left_hover.png" />
+    <Content Include="Resources\corner_left_press.png" />
+    <Content Include="Resources\corner_right.png" />
+    <Content Include="Resources\corner_right_hover.png" />
+    <Content Include="Resources\corner_right_press.png" />
+    <Content Include="Resources\cut.png" />
+    <Content Include="Resources\cut1.png" />
+    <Content Include="Resources\cut2.png" />
+    <Content Include="Resources\cut_red.png" />
+    <Content Include="Resources\delete.png" />
+    <Content Include="Resources\delete1.png" />
+    <Content Include="Resources\disk.png" />
+    <Content Include="Resources\Document 2 Edit.png" />
+    <Content Include="Resources\down.png" />
+    <Content Include="Resources\down1.png" />
+    <Content Include="Resources\duozhanghao1.png" />
+    <Content Include="Resources\duozhanghao2.png" />
+    <Content Include="Resources\duozhanghao3.png" />
+    <Content Include="Resources\duozhanghao4.png" />
+    <Content Include="Resources\duozhanghao5.png" />
+    <Content Include="Resources\duozhanghao6.png" />
+    <Content Include="Resources\edit-redo.png" />
+    <Content Include="Resources\edit-undo.png" />
+    <Content Include="Resources\face-smile.png" />
+    <Content Include="Resources\find.png" />
+    <Content Include="Resources\find2.png" />
+    <Content Include="Resources\firstPage.png" />
+    <Content Include="Resources\Folder.png" />
+    <Content Include="Resources\folder_new.png" />
+    <Content Include="Resources\folder_new1.png" />
+    <Content Include="Resources\format-text-bold.png" />
+    <Content Include="Resources\frameBorderEffect_mouseDownDraw.png" />
+    <Content Include="Resources\frameBorderEffect_normalDraw.png" />
+    <Content Include="Resources\GG64.png" />
+    <Content Include="Resources\girl.png" />
+    <Content Include="Resources\Go.bmp" />
+    <Content Include="Resources\Go1.bmp" />
+    <Content Include="Resources\group.ico" />
+    <Content Include="Resources\Group1.png" />
+    <Content Include="Resources\Group2.png" />
+    <Content Include="Resources\GVideoTurnOffVideo.png" />
+    <Content Include="Resources\GVideoTurnOnVideo.png" />
+    <Content Include="Resources\GVideo_Icon_48.png" />
+    <Content Include="Resources\GVShareVideoCloseSpk_MouseOver.png" />
+    <Content Include="Resources\GVShareVideoCloseSpk_Normal.png" />
+    <Content Include="Resources\HDVideoHangs.png" />
+    <Content Include="Resources\HDVideoPiP.png" />
+    <Content Include="Resources\icon_weibo.png" />
+    <Content Include="Resources\imgRjp.BackgroundImage.png" />
+    <Content Include="Resources\imoffline %282%29.png" />
+    <Content Include="Resources\imonline %282%29.png" />
+    <Content Include="Resources\inputbox.png" />
+    <Content Include="Resources\inputbox_hover.png" />
+    <Content Include="Resources\invisible %282%29.png" />
+    <Content Include="Resources\lastPage.png" />
+    <Content Include="Resources\login_inputbtn_down.png" />
+    <Content Include="Resources\login_inputbtn_highlight.png" />
+    <Content Include="Resources\login_inputbtn_normal.png" />
+    <Content Include="Resources\magnifier.png" />
+    <Content Include="Resources\menu_btn_highlight.png" />
+    <Content Include="Resources\menu_btn_normal.png" />
+    <Content Include="Resources\menu_check.png" />
+    <Content Include="Resources\mic1.png" />
+    <Content Include="Resources\mic2.png" />
+    <Content Include="Resources\micDis.png" />
+    <Content Include="Resources\mima.png" />
+    <Content Include="Resources\mima_hover.png" />
+    <Content Include="Resources\mima_press.png" />
+    <Content Include="Resources\MinIcons_017.png" />
+    <Content Include="Resources\morning.jpg" />
+    <Content Include="Resources\mute %282%29.png" />
+    <Content Include="Resources\NetState_Point4.png" />
+    <Content Include="Resources\nextPage.png" />
+    <Content Include="Resources\night.jpg" />
+    <Content Include="Resources\None64.ico" />
+    <Content Include="Resources\noon.jpg" />
+    <Content Include="Resources\normal_group_40.png" />
+    <Content Include="Resources\Norml.png" />
+    <Content Include="Resources\paste.png" />
+    <Content Include="Resources\paste1.png" />
+    <Content Include="Resources\Pencil.png" />
+    <Content Include="Resources\pic2.png" />
+    <Content Include="Resources\Picture.bmp" />
+    <Content Include="Resources\pictureBox1.Image.png" />
+    <Content Include="Resources\prePage.png" />
+    <Content Include="Resources\Qme %282%29.png" />
+    <Content Include="Resources\QQAddBuddyNormal.png" />
+    <Content Include="Resources\refresh.png" />
+    <Content Include="Resources\refresh1.png" />
+    <Content Include="Resources\remind_highlight.png" />
+    <Content Include="Resources\RemoteHelp.png" />
+    <Content Include="Resources\SendFiles.bmp" />
+    <Content Include="Resources\Smiley Happy.png" />
+    <Content Include="Resources\spin_normal_down.png" />
+    <Content Include="Resources\texture.png" />
+    <Content Include="Resources\texture2.png" />
+    <Content Include="Resources\ToolbarBtnDown.png" />
+    <Content Include="Resources\ToolbarBtnNormal.png" />
+    <Content Include="Resources\trad_group.png" />
+    <Content Include="Resources\up.png" />
+    <Content Include="Resources\up1.png" />
+    <Content Include="Resources\user1.png" />
+    <Content Include="Resources\user2.png" />
+    <Content Include="Resources\user3.png" />
+    <Content Include="Resources\user4.png" />
+    <Content Include="Resources\user5.png" />
+    <Content Include="Resources\user6.png" />
+    <Content Include="Resources\users2.png" />
+    <Content Include="Resources\user_add.png" />
+    <Content Include="Resources\user_delete.png" />
+    <Content Include="Resources\VASFlagEnable.png" />
+    <Content Include="Resources\VideoWaitToAnswer.png" />
+    <Content Include="Resources\win_icon_16.ico" />
+    <Content Include="Resources\yuancheng.bmp" />
+    <Content Include="Resources\zhuce.png" />
+    <Content Include="Resources\zhuce_hover.png" />
+    <Content Include="Resources\zhuce_press.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

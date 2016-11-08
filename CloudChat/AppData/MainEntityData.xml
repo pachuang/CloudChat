@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Entity>
+  <FriendEntity name ="LocalEntity">
+    <ComputerName>"LSY"</ComputerName>
+    <IPAdress></IPAdress>
+    <NickName></NickName>
+    <TrueName></TrueName>
+    <Sex></Sex>
+    <Picture></Picture>
+    <Department></Department>
+    <Staturs></Staturs>
+    <Sigenature></Sigenature>
+    </FriendEntity>
+</Entity>

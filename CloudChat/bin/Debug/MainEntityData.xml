@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Entity>
+  <FriendEntity name="LsyZl-PC">
+    <ComputerName>LsyZl-PC</ComputerName>
+    <IPAdress>127.0.0.1</IPAdress>
+    <NickName>lishangyou</NickName>
+    <TrueName>LsyZl-PC</TrueName>
+    <Sex>女</Sex>
+    <Picture></Picture>
+    <Department>交付中心</Department>
+    <Staturs>在线</Staturs>
+    <Sigenature>撰写属于自己的个性签名</Sigenature>
+  </FriendEntity>
+</Entity>
